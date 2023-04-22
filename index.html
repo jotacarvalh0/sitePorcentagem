@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Contador de porcentagem de faltas</title>
+</head>
+<body>
+    <h2>Contador de porcentagem</h2>
+    <div id="inputs">
+        <label id="label1" for="">Quantidade de dias letivos</label>
+        <input id="diasLetivos" type="text">
+
+        <label id="label1" for="">Quantidade de dias faltas</label>
+        <input id="quantidadeFaltas" type="text">
+    </div>
+    <button id="botao" onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            let diasLetivos = document.getElementById("diasLetivos").value
+            let quantidadeFaltas = document.getElementById("quantidadeFaltas").value
+            diasLetivos = parseFloat(diasLetivos)
+            quantidadeFaltas = parseFloat(quantidadeFaltas)
+
+            const porcentagem = (quantidadeFaltas/diasLetivos)*100
+
+            document.getElementById("resultado").innerHTML = `O valor da porcentagem de presença é ${porcentagem}%`
+        }
+    </script>
+</body>
+</html>
